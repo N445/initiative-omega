@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "./variables";
+@import "select2/dist/css/select2.css";
+
+$s2bs5-placeholder-color: $primary-dark;
+$s2bs5-item-hover-bg:     lighten($input-bg, 10);
+$s2bs5-border-color:      $input-border-color;
+$s2bs5-color:             white;
+$s2bs5-bg:                $input-bg;
+
+@import "select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
+
+
+.fleets, .fleets-form {
+  .fleet {
+    position: relative;
+
+    .top-image {
+      min-height: 100px;
+      object-fit: cover;
+    }
+
+
+    &.form {
+      .top-image {
+        position: relative;
+
+        &:before {
+          content:          '';
+          position:         absolute;
+          inset:            0;
+          background-image: linear-gradient(to bottom, rgba($custom-dark, .8), rgba($custom-dark, 0));
+          z-index:          10;
+          pointer-events:   none;
+        }
+      }
+    }
+
+    .btn-remove-fleet {
+      position:         absolute;
+      top:              0;
+      right:            0;
+      background-color: transparent;
+      border:           none;
+      z-index:          20;
+
+      i {
+        transition: .2s ease-in-out all;
+      }
+
+      &:hover {
+        i {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

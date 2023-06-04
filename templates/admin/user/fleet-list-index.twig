@@ -1,0 +1,5 @@
+{# {% for fleet in entity.instance.fleets %} #}
+{#    {{ fleet.ship.name }} [{{ fleet.numberShips }}]{{ not loop.last?', ':'' }} #}
+{# {% endfor %} #}
+
+{{ entity.instance.fleets|length }}

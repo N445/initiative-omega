@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shadow of Caliban{% endblock %}
+
+{% block body %}
+    <div class="container-fluid my-5">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                <div class="container">
+                    <h1>Erreur</h1>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <div class="card text-bg-dark">
+                        <div class="card-body">
+                            <hr>
+                            <p>Seul les admin peuvent voir le détail</p>
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                    <th>status_code</th>
+                                    <td>{{ status_code }}</td>
+                                </tr>
+                                <tr>
+                                    <th>status_text</th>
+                                    <td>{{ status_text }}</td>
+                                </tr>
+                                <tr>
+                                    <th>exception</th>
+                                    <td>{{ exception.message }}</td>
+                                </tr>
+                                <tr>
+                                    <th>file</th>
+                                    <td>{{ exception.file }}:{{ exception.line }}</td>
+                                </tr>
+                                <tr>
+                                    <th>trace</th>
+                                    <td>{{ exception.traceAsString }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

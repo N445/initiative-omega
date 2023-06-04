@@ -1,0 +1,15 @@
+/* TEAM */
+    Developer: Naas
+    Discord: Naas#2123
+    Twitter: @Asdrubal1234
+    Location: Angoulême, France
+
+
+/* THANKS */
+    Name: Star citizen
+
+/* SITE */
+    Last update:  2022/04/08
+    Standards: HTML5, CSS3, JS
+    Components: Symfony 6, jQuery, Bootstrap 5.
+    Software: PhpStorm, Docker, Portainer

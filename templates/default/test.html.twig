@@ -1,0 +1,24 @@
+{% extends 'base-inside-page.html.twig' %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('test') }}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('test') }}
+{% endblock %}
+
+{% block body_content %}
+    <div class="test">
+        {{ render_main_btn(
+            'Super button',
+        ) }}
+    </div>
+{% endblock %}
+
+

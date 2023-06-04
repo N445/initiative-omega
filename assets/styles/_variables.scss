@@ -1,0 +1,23 @@
+$overlay-color:            #0E1115;
+$primary:                  #B20001;
+$success:                  #4CAF50;
+$primary-dark:             darken($primary, 20);
+$custom-dark:              #0E1115;
+$custom-dark-light:        #1B222A;
+//$custom-dark-light: lighten($custom-dark, 10);
+$custom-secondary:         #F29530;
+$secondary:                $custom-secondary;
+
+
+$input-bg:                 #191F26;
+$input-border-color:       #19232A;
+$input-border-color:       rgba($primary, 1);
+$input-focus-border-color: rgba($primary, 1);
+$input-color:              #EDEDED;
+$input-btn-focus-color:    rgba($primary, .1);
+$form-check-input-border:  1px solid rgba($primary, 1);
+
+$linear-gradiant:          linear-gradient(to right, $primary, $secondary);
+
+
+$main-font-family:        'Ubuntu', 'Open sans', Verdana, Arial, Helvetica, sans-serif;

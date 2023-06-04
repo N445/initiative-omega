@@ -1,0 +1,14 @@
+{% for label, messages in app.flashes %}
+    <div class="flash-message-wrapper d-none">
+        <div class="container">
+            {% for message in messages %}
+                <div class="flash-message alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                    <div class="message">{{ message|raw }}</div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

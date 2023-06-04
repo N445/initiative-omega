@@ -1,0 +1,21 @@
+{% extends 'base-email.html.twig' %}
+
+{% block body %}
+    <container>
+        <row>
+            <columns>
+                <spacer size="16"></spacer>
+                <h1>Nouveau contact</h1>
+                <ul>
+                    <li><strong>Email : </strong>{{ contact.email }}</li>
+                    <li><strong>Envoyé le : </strong>{{ contact.sendAt|date('d/m/Y H:i') }}</li>
+                </ul>
+                <callout class="primary">
+                    <p><strong>Message</strong></p>
+                    <p>{{ contact.message }}</p>
+                </callout>
+
+            </columns>
+        </row>
+    </container>
+{% endblock %}

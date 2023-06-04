@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="author" href="{{ asset('humans.txt') }}"/>
+    <!-- Primary Meta Tags -->
+    <title>{% block title %}Shadow of Caliban Star Citizen Corporation{% endblock %}</title>
+    <meta name="title" content="Shadow of Caliban Star Citizen Corporation">
+    <meta name="description"
+          content="La corportation Star Citizen Shadow Of Caliban, pour du Role Play, du PVP et du PVE.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ absolute_url(app.request.pathInfo) }}"/>
+    <meta property="og:title" content="Shadow of Caliban Star Citizen Corporation">
+    <meta property="og:site_name" content="Shadow of Caliban Star Citizen Corporation"/>
+    <meta property="og:description"
+          content="La corportation Star Citizen Shadow Of Caliban, pour du Role Play, du PVP et du PVE.">
+    <meta property="og:image" content="{{ absolute_url(asset('seo/homepage.png')|imagine_filter('seo_og')) }}">
+    <meta property="og:locale" content="fr_FR"/>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Shadow of Caliban Star Citizen Corporation">
+    <meta property="twitter:description"
+          content="La corportation Star Citizen Shadow Of Caliban, pour du Role Play, du PVP et du PVE.">
+    <meta property="twitter:image"
+          content="{{ absolute_url(asset('seo/homepage.png')|imagine_filter('seo_twitter_card')) }}">
+    <meta name="twitter:site" content="@ShadowofCaliban">
+    <meta name="twitter:creator" content="@ShadowofCaliban">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="application/ld+json">{{ getRichSnippet()|json_encode|raw }}</script>
+    {% include 'include/_favicon.html.twig' %}
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {{ encore_entry_link_tags('fonts', attributes={
+        as: 'font'
+    }) }}
+    {{ encore_entry_link_tags('app') }}
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js',
+            });
+            var f                          = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W6BTK4D');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//matomo.robin-parisot.fr/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '2']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-config='{"rootMargin":"0px 0px 100%"}'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6BTK4D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% include 'include/navigation.html.twig' %}
+{% include 'include/_notification.html.twig' %}
+<main>
+    {% block body %}{% endblock %}
+</main>
+{% include 'include/footer.html.twig' %}
+{{ encore_entry_script_tags('app') }}
+{{ encore_entry_script_tags('stimulus') }}
+{{ encore_entry_script_tags('system') }}
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>

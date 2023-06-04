@@ -1,0 +1,95 @@
+<section id="join-us" data-aos="fade-up">
+    <div class="container">
+        <div class="decorated-title">
+            <h4 class="main-font">NOUS REJOINDRE</h4>
+            <span class="trait"></span>
+        </div>
+        <p class="text-center">
+            Tu as envie de joindre l'aventure <strong>Star Citizen</strong> avec la <strong>Shadow of Caliban</strong>.
+            <br>
+            Si tu n'a pas encore de compte je t'invite a cliquez sur le lien ci dessous avec le <strong>referral code</strong> d'un de
+            nos membre.
+        </p>
+      <div class="text-center my-4">
+          {% set rocketIcon = '<i class="join-us-referral-icon ms-2 fas fa-rocket">
+                            <span class="rocket-flams">
+                                <span class="rocket-flam"></span>
+                                <span class="rocket-flam"></span>
+                                <span class="rocket-flam"></span>
+                            </span>
+                        </i>' %}
+
+          {{ render_main_btn(
+              '<strong>'~referral.code|default('STAR-ZHYR-JN3G')~'</strong>',
+              "https://robertsspaceindustries.com/enlist?referral="~referral.code|default('STAR-ZHYR-JN3G'),
+              {
+                  beforeHtml:rocketIcon,
+                  linkAttr:'target=\"_blank\"'
+              }
+          ) }}
+      </div>
+        <p class="text-center">
+            Puis de nous rejoindre sur discord en selectionant ton rôle ci dessous.
+        </p>
+        <div class="roles">
+            {#                    <div class="role role-ambassadeur"> #}
+            {#                        <div class="role-container"> #}
+            {#                            <img src="{{ asset('images/472537.jpg') }}" alt="" class="img-fluid"> #}
+            {#                            <div class="content"> #}
+            {#                                <h4 class="title">Ambassadeur</h4> #}
+            {#                                <p class="text"> #}
+            {#                                    Vous faites partis d'une autre corporation ? Devenez ambadasseur chez la Shadow of #}
+            {#                                    Caliban, pour organiser des évenements entre nos corporations #}
+            {#                                </p> #}
+            {#                            </div> #}
+            {#                        </div> #}
+            {#                    </div> #}
+            <div class="role role-citizen">
+                <a href="https://discord.gg/fZ5Jhkb6FH"
+                   class="role-container d-block" target="_blank">
+                    <img src="{{ asset('images/homepage/roles/citizen.webp')|imagine_filter('role_small') }}"
+                            {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                                src: asset('images/homepage/roles/citizen.webp')|imagine_filter('role')
+                            }) }} alt="Citizen" class="img-fluid" loading="lazy">
+                    <div class="content">
+                        <h4 class="title">Citizen</h4>
+                        <p class="text">
+                            Pour faire partis a part entière <br> de la Shadow of Caliban, devenez citoyen.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="role role-partenaire">
+                <a href="https://discord.gg/aruJXZB45V"
+                   class="role-container d-block" target="_blank">
+                    <img src="{{ asset('images/homepage/roles/partenaire.webp')|imagine_filter('role_small') }}"
+                         {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                             src: asset('images/homepage/roles/partenaire.webp')|imagine_filter('role')
+                         }) }}alt="Partenaire" class="img-fluid">
+                    <div class="content">
+                        <h4 class="title">Partenaire</h4>
+                        <p class="text">
+                            Tu es membre d'une organisation externe ? <br>
+                            Contact un membre du conseil des capitaines pour organiser des évènements commun.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="role role-freelance">
+                <a href="https://discord.gg/fJxhEFbT7j"
+                   class="role-container d-block" target="_blank">
+                    <img src="{{ asset('images/homepage/roles/freelance.webp')|imagine_filter('role_small') }}"
+                         {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                             src: asset('images/homepage/roles/freelance.webp')|imagine_filter('role')
+                         }) }}alt="Freelance" class="img-fluid">
+                    <div class="content">
+                        <h4 class="title">Freelance</h4>
+                        <p class="text">
+                            Si tu veux participez <br> a nos évent librement, deviens freelance.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

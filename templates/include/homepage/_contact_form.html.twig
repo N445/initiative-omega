@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+<div class="mb-3">
+    {{ form_row(form.typeContact) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.email) }}
+</div>
+<div class="mb-3">
+    {{ form_row(form.message) }}
+</div>
+
+<div class="my-4">
+    {{ render_main_btn(
+        'Envoyer',
+        null,
+        {
+            linkAttr:'data-sitekey="{{ recaptcha_site_key }}"',
+            classes:'w-100',
+            isSubmit:true
+        }
+    ) }}
+</div>
+{#<button type="submit" class="btn btn-primary btn-lg btn-submit text-white w-100 mb-3"
+{#        >#}
+{#    <span class="text">#}
+{#    Envoyer#}
+{#    </span>#}
+{#</button>#}
+{{ form_row(form.rgpd) }}
+    {{ form_widget(form) }}
+{{ form_end(form) }}

@@ -1,0 +1,35 @@
+@import "./../variables";
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+
+$custom-colors:   (
+                          'primary':$primary,
+                          'white':#FFF,
+                          'gold':#C89524,
+                          'dark':$custom-dark-light,
+                          'primary-rgba':rgba($primary, .6),
+                          'custom-secondary':$custom-secondary,
+                          'custom-dark':$custom-dark,
+                          'custom-dark-light':$custom-dark-light,
+                  );
+
+$table-variants:  (
+                          'custom-dark-light':$custom-dark-light,
+                  );
+
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+
+//$text-color:      color-contrast($custom-dark);
+$text-color:      #EDEDED;
+$angle-height:    100;
+$angle-height-md: 50;
+
+

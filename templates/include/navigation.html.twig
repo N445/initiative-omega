@@ -1,0 +1,109 @@
+<div class="custom-navbar-container">
+    <div class="custom-navbar angle-top-left">
+        <div class="logo">
+            <a class="navbar-brand px-3 d-block" href="{{ path('HOMEPAGE') }}" aria-label="Accueil Shadow of Caliban">
+                <img src="{{ asset('images/logo/logo-couleur.svg') }}" alt="Shadow of Caliban" class="main-logo" width="125" height="160">
+                {#            <img src="{{ asset('images/logo/logo-blanc.svg') }}" alt="" width="100%"> #}
+            </a>
+        </div>
+        <div class="main-navbar">
+            <nav class="navbar navbar-expand-md align-items-stretch">
+                <button class="navbar-toggler collapsed hamburger hamburger--collapse ms-3 my-2"
+                        type="button"
+                        data-bs-toggle="collapse" data-bs-target="#main-navbar"
+                        aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                      </span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav mb-2 mb-lg-0 w-100">
+                        <li class="nav-item px-3">
+                            <a class="nav-link" aria-current="page" href="{{ path('HOMEPAGE') }}#top-banner"
+                               data-to-scroll-element="#top-banner">
+                                Accueil
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#histoire"
+                               data-to-scroll-element="#histoire">
+                                Histoire
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#activites"
+                               data-to-scroll-element="#activites">
+                                Activités
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#join-us"
+                               data-to-scroll-element="#join-us">
+                                Nous rejoindre
+                            </a>
+                        </li>
+                        {#                        <li class="nav-item px-3"> #}
+                        {#                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#histoire" #}
+                        {#                               data-to-scroll-element="#histoire"> #}
+                        {#                                Histoire #}
+                        {#                            </a> #}
+                        {#                        </li> #}
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#exploit"
+                               data-to-scroll-element="#exploit">
+                                Exploits
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#events"
+                               data-to-scroll-element="#events">
+                                Events
+                            </a>
+                        </li>
+                        {#                        <li class="nav-item px-3"> #}
+                        {#                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#charte" #}
+                        {#                               data-to-scroll-element="#charte"> #}
+                        {#                                Charte #}
+                        {#                            </a> #}
+                        {#                        </li> #}
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="{{ path('HOMEPAGE') }}#chart-contact"
+                               data-to-scroll-element="#chart-contact">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link{{ app.request.get('_route') == 'PROFILE'?' active':'' }}"
+                               href="{{ path('PROFILE') }}">
+                                Espace membre
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="secondary-navbar mt-auto">
+            <nav class="navbar align-items-stretch">
+                <ul class="navbar-nav mb-2 mb-lg-0 w-100 ">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" aria-current="page" href="{{ discord_url }}"
+                           target="_blank">
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="{{ path('HOMEPAGE') }}#chart-contact" data-to-scroll-element-2="#chart-contact">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="bottom">
+            <div class="logo-sc">
+                <img src="{{ asset('images/logosc.png') }}" alt="Star Citizen made by community" class="img-fluid" width="60" height="60">
+            </div>
+        </div>
+    </div>
+</div>
+

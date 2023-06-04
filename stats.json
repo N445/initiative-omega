@@ -1,0 +1,645 @@
+{
+  "outputPath": "/data/www/shadow-of-caliban/public/build",
+  "entrypoints": {
+    "app": {
+      "name": "app",
+      "chunks": [
+        "app"
+      ],
+      "assets": [
+        {
+          "name": "app.css",
+          "size": 942643
+        },
+        {
+          "name": "app.js",
+          "size": 1867431
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 2810074,
+      "auxiliaryAssets": [
+        {
+          "name": "fonts/Ubuntu-Bold.5de31d28.woff2",
+          "size": 84300
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.925bbfab.woff",
+          "size": 111016
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.a1eda165.eot",
+          "size": 241446
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.ab8670fc.ttf",
+          "size": 241296
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.1ecb5cc8.eot",
+          "size": 270962
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.58206a00.ttf",
+          "size": 270800
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.6ebae6bb.woff2",
+          "size": 99256
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.f20e45a9.woff",
+          "size": 129064
+        },
+        {
+          "name": "fonts/cosmo.a1cc2c45.otf",
+          "size": 62256
+        },
+        {
+          "name": "fonts/fa-brands-400.e1a247a5.woff2",
+          "size": 107460
+        },
+        {
+          "name": "fonts/fa-brands-400.f9ee61fa.ttf",
+          "size": 186112
+        },
+        {
+          "name": "fonts/fa-solid-900.66104b76.woff2",
+          "size": 150472
+        },
+        {
+          "name": "fonts/fa-solid-900.b48ad290.ttf",
+          "size": 397728
+        },
+        {
+          "name": "images/Ubuntu-Bold.ae5d5686.svg",
+          "size": 1104179
+        },
+        {
+          "name": "images/Ubuntu-Regular.5a4c8fac.svg",
+          "size": 991685
+        },
+        {
+          "name": "images/icomoon.b159b819.svg",
+          "size": 19132
+        }
+      ],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 4467164,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "homepage": {
+      "name": "homepage",
+      "chunks": [
+        "homepage"
+      ],
+      "assets": [
+        {
+          "name": "homepage.css",
+          "size": 213474
+        },
+        {
+          "name": "homepage.js",
+          "size": 1630798
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1844272,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "homepage-computer": {
+      "name": "homepage-computer",
+      "chunks": [
+        "homepage-computer"
+      ],
+      "assets": [
+        {
+          "name": "homepage-computer.css",
+          "size": 83349
+        },
+        {
+          "name": "homepage-computer.js",
+          "size": 45261
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 128610,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "stimulus": {
+      "name": "stimulus",
+      "chunks": [
+        "stimulus"
+      ],
+      "assets": [
+        {
+          "name": "stimulus.js",
+          "size": 1702804
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1702804,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "system": {
+      "name": "system",
+      "chunks": [
+        "system"
+      ],
+      "assets": [
+        {
+          "name": "system.js",
+          "size": 1113276
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1113276,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "profile": {
+      "name": "profile",
+      "chunks": [
+        "profile"
+      ],
+      "assets": [
+        {
+          "name": "profile.css",
+          "size": 244887
+        },
+        {
+          "name": "profile.js",
+          "size": 1511976
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1756863,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "exploits": {
+      "name": "exploits",
+      "chunks": [
+        "exploits"
+      ],
+      "assets": [
+        {
+          "name": "exploits.css",
+          "size": 166361
+        },
+        {
+          "name": "exploits.js",
+          "size": 1502627
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1668988,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "test": {
+      "name": "test",
+      "chunks": [
+        "test"
+      ],
+      "assets": [
+        {
+          "name": "test.css",
+          "size": 1279
+        },
+        {
+          "name": "test.js",
+          "size": 4528
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 5807,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "fonts": {
+      "name": "fonts",
+      "chunks": [
+        "fonts"
+      ],
+      "assets": [
+        {
+          "name": "fonts.css",
+          "size": 40538
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 40538,
+      "auxiliaryAssets": [
+        {
+          "name": "fonts/Ubuntu-Bold.5de31d28.woff2",
+          "size": 84300
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.925bbfab.woff",
+          "size": 111016
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.a1eda165.eot",
+          "size": 241446
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.ab8670fc.ttf",
+          "size": 241296
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.1ecb5cc8.eot",
+          "size": 270962
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.58206a00.ttf",
+          "size": 270800
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.6ebae6bb.woff2",
+          "size": 99256
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.f20e45a9.woff",
+          "size": 129064
+        },
+        {
+          "name": "fonts/cosmo.a1cc2c45.otf",
+          "size": 62256
+        },
+        {
+          "name": "images/Ubuntu-Bold.ae5d5686.svg",
+          "size": 1104179
+        },
+        {
+          "name": "images/Ubuntu-Regular.5a4c8fac.svg",
+          "size": 991685
+        },
+        {
+          "name": "images/icomoon.b159b819.svg",
+          "size": 19132
+        }
+      ],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 3625392,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "namedChunkGroups": {
+    "app": {
+      "name": "app",
+      "chunks": [
+        "app"
+      ],
+      "assets": [
+        {
+          "name": "app.css",
+          "size": 942643
+        },
+        {
+          "name": "app.js",
+          "size": 1867431
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 2810074,
+      "auxiliaryAssets": [
+        {
+          "name": "fonts/Ubuntu-Bold.5de31d28.woff2",
+          "size": 84300
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.925bbfab.woff",
+          "size": 111016
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.a1eda165.eot",
+          "size": 241446
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.ab8670fc.ttf",
+          "size": 241296
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.1ecb5cc8.eot",
+          "size": 270962
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.58206a00.ttf",
+          "size": 270800
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.6ebae6bb.woff2",
+          "size": 99256
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.f20e45a9.woff",
+          "size": 129064
+        },
+        {
+          "name": "fonts/cosmo.a1cc2c45.otf",
+          "size": 62256
+        },
+        {
+          "name": "fonts/fa-brands-400.e1a247a5.woff2",
+          "size": 107460
+        },
+        {
+          "name": "fonts/fa-brands-400.f9ee61fa.ttf",
+          "size": 186112
+        },
+        {
+          "name": "fonts/fa-solid-900.66104b76.woff2",
+          "size": 150472
+        },
+        {
+          "name": "fonts/fa-solid-900.b48ad290.ttf",
+          "size": 397728
+        },
+        {
+          "name": "images/Ubuntu-Bold.ae5d5686.svg",
+          "size": 1104179
+        },
+        {
+          "name": "images/Ubuntu-Regular.5a4c8fac.svg",
+          "size": 991685
+        },
+        {
+          "name": "images/icomoon.b159b819.svg",
+          "size": 19132
+        }
+      ],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 4467164,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "homepage": {
+      "name": "homepage",
+      "chunks": [
+        "homepage"
+      ],
+      "assets": [
+        {
+          "name": "homepage.css",
+          "size": 213474
+        },
+        {
+          "name": "homepage.js",
+          "size": 1630798
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1844272,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "homepage-computer": {
+      "name": "homepage-computer",
+      "chunks": [
+        "homepage-computer"
+      ],
+      "assets": [
+        {
+          "name": "homepage-computer.css",
+          "size": 83349
+        },
+        {
+          "name": "homepage-computer.js",
+          "size": 45261
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 128610,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "stimulus": {
+      "name": "stimulus",
+      "chunks": [
+        "stimulus"
+      ],
+      "assets": [
+        {
+          "name": "stimulus.js",
+          "size": 1702804
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1702804,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "system": {
+      "name": "system",
+      "chunks": [
+        "system"
+      ],
+      "assets": [
+        {
+          "name": "system.js",
+          "size": 1113276
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1113276,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "profile": {
+      "name": "profile",
+      "chunks": [
+        "profile"
+      ],
+      "assets": [
+        {
+          "name": "profile.css",
+          "size": 244887
+        },
+        {
+          "name": "profile.js",
+          "size": 1511976
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1756863,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "exploits": {
+      "name": "exploits",
+      "chunks": [
+        "exploits"
+      ],
+      "assets": [
+        {
+          "name": "exploits.css",
+          "size": 166361
+        },
+        {
+          "name": "exploits.js",
+          "size": 1502627
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 1668988,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": true
+    },
+    "test": {
+      "name": "test",
+      "chunks": [
+        "test"
+      ],
+      "assets": [
+        {
+          "name": "test.css",
+          "size": 1279
+        },
+        {
+          "name": "test.js",
+          "size": 4528
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 5807,
+      "auxiliaryAssets": [],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    },
+    "fonts": {
+      "name": "fonts",
+      "chunks": [
+        "fonts"
+      ],
+      "assets": [
+        {
+          "name": "fonts.css",
+          "size": 40538
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": 40538,
+      "auxiliaryAssets": [
+        {
+          "name": "fonts/Ubuntu-Bold.5de31d28.woff2",
+          "size": 84300
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.925bbfab.woff",
+          "size": 111016
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.a1eda165.eot",
+          "size": 241446
+        },
+        {
+          "name": "fonts/Ubuntu-Bold.ab8670fc.ttf",
+          "size": 241296
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.1ecb5cc8.eot",
+          "size": 270962
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.58206a00.ttf",
+          "size": 270800
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.6ebae6bb.woff2",
+          "size": 99256
+        },
+        {
+          "name": "fonts/Ubuntu-Regular.f20e45a9.woff",
+          "size": 129064
+        },
+        {
+          "name": "fonts/cosmo.a1cc2c45.otf",
+          "size": 62256
+        },
+        {
+          "name": "images/Ubuntu-Bold.ae5d5686.svg",
+          "size": 1104179
+        },
+        {
+          "name": "images/Ubuntu-Regular.5a4c8fac.svg",
+          "size": 991685
+        },
+        {
+          "name": "images/icomoon.b159b819.svg",
+          "size": 19132
+        }
+      ],
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 3625392,
+      "children": {},
+      "childAssets": {},
+      "isOverSizeLimit": false
+    }
+  },
+  "errorsCount": 0,
+  "warningsCount": 0
+}

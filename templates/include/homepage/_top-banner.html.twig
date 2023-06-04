@@ -1,0 +1,82 @@
+<div id="top-banner" class="paralax">
+    <div class="background">
+        {% set path = 'images/homepage/top-banner.webp' %}
+        {% set pathWebp = 'images/homepage/top-banner.jpg' %}
+{#        {% set sources = {#}
+{#            'image/webp':path,#}
+{#            'image/jpeg':pathWebp#}
+{#        } %}#}
+        {% set sources = {
+            'image/webp':path,
+        } %}
+        <picture>
+            {% for type,source in sources %}
+                <source srcset="{{ source|imagine_filter('low_top_banner_xs') }}"
+                        sizes="(max-width: 570px) 570px,
+              (max-width: 720px) 720px,
+              (max-width: 980px) 980px,
+              (max-width: 1200px) 1200px,
+              (max-width: 1900px) 1900px"
+                        {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                            srcset: {
+                                '570w': source|imagine_filter('top_banner_xs'),
+                                '720w': source|imagine_filter('top_banner_sm'),
+                                '980w': source|imagine_filter('top_banner_md'),
+                                '1200w': source|imagine_filter('top_banner_lg'),
+                                '1900w': source|imagine_filter('top_banner'),
+                            }
+                        }) }}
+                        type="{{ type }}">
+            {% endfor %}
+            <img alt="Cosmo background">
+{#            <img alt="Cosmo background"#}
+{#                    {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {#}
+{#                        src: pathWebp|imagine_filter('top_banner'),#}
+{#                        srcset: {#}
+{#                            '570w': pathWebp|imagine_filter('top_banner_xs'),#}
+{#                            '720w': pathWebp|imagine_filter('top_banner_sm'),#}
+{#                            '980w': pathWebp|imagine_filter('top_banner_md'),#}
+{#                            '1200w': pathWebp|imagine_filter('top_banner_lg'),#}
+{#                            '1900w': pathWebp|imagine_filter('top_banner_xl'),#}
+{#                            '1900w': pathWebp|imagine_filter('top_banner'),#}
+{#                        }#}
+{#                    }) }}>#}
+        </picture>
+    </div>
+    <div class="content" data-aos="fade-up">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-md-10">
+                    <div class="container">
+                        <img src="{{ asset('images/logo/logo-couleur.svg') }}" alt="Shadow of Caliban"
+                             class="img-fluid logo main-logo" width="250" height="324">
+                        <h1 class="main-font">Flotte nomade des <strong>Shadow of Caliban</strong></h1>
+                        <p class="my-4">Tu es à la recherche d’une organisation tournée sur l’<strong>exploration
+                                des systèmes</strong>
+                            et la <strong>contrebande de bien exotique</strong>, avec l’envie d’utiliser l’ensemble des
+                            corps
+                            de métier pour répondre à notre objectif, de
+                            <strong>construire une flotte nomade</strong> et <strong>autosuffisante</strong>.
+                        </p>
+                        {#              <div class="mb-3">
+                            <a href="https://www.guilded.gg/i/m24dzjW2" target="_blank" type="submit"
+                               class="btn btn-lg btn-primary main-cta gradiant-container">
+                                <span class="gradiant"></span>
+                                <span class="gradiant-content">
+                                    <span>Retrouvez-nous</span>
+                        <i class="ms-2 fas fa-rocket">
+                            <span class="rocket-flams">
+                                <span class="rocket-flam"></span>
+                                <span class="rocket-flam"></span>
+                                <span class="rocket-flam"></span>
+                            </span>
+                        </i>
+                    </span>
+                            </a>
+                        </div> #}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

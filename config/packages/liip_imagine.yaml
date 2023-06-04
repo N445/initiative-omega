@@ -1,0 +1,246 @@
+# Documentation on how to configure the bundle can be found at: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+  # valid drivers options include "gd" or "gmagick" or "imagick"
+  driver: "imagick"
+  twig:
+    mode: lazy
+  default_filter_set_settings:
+    format: webp
+  #    webp:
+  #        generate: true
+  filter_sets:
+    top_banner_xs:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 570, 300 ]
+          mode: outbound
+    top_banner_xs_webp:
+      format: webp
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 570, 300 ]
+          mode: outbound
+    top_banner_sm:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 720, 400 ]
+          mode: outbound
+    top_banner_md:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 980, 500 ]
+          mode: outbound
+    top_banner_lg:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 1200, 600 ]
+          mode: outbound
+    top_banner_xl:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 2100, 900 ]
+          mode: outbound
+    low_top_banner_xs:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 285, 150 ]
+          mode: outbound
+    low_top_banner_sm:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 360, 200 ]
+          mode: outbound
+    low_top_banner_md:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 490, 250 ]
+          mode: outbound
+    low_top_banner_lg:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 600, 300 ]
+          mode: outbound
+    low_top_banner_xl:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 950, 350 ]
+          mode: outbound
+    low_top_banner:
+      quality: 40
+      filters:
+        thumbnail:
+          size: [ 950, 350 ]
+          mode: outbound
+    top_banner:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 2100, 900 ]
+          mode: outbound
+    inter_angle_xs:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 570, 300 ]
+          mode: outbound
+    inter_angle_sm:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 720, 300 ]
+          mode: outbound
+    inter_angle_md:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 980, 400 ]
+          mode: outbound
+    inter_angle_lg:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 1200, 500 ]
+          mode: outbound
+    inter_angle_xl:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 2100, 600 ]
+          mode: outbound
+    inter_angle:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 2100, 600 ]
+          mode: outbound
+    low_inter_angle:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 1000, 250 ]
+          mode: outbound
+    activite_xs:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 550, 330 ]
+          mode: outbound
+    activite_sm:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 520, 330 ]
+          mode: outbound
+    activite_md:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 221, 150 ]
+          mode: outbound
+    activite_lg:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 300, 200 ]
+          mode: outbound
+    activite_xl:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 360, 246 ]
+          mode: outbound
+    activite:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 421, 287 ]
+          mode: outbound
+    activite_banner:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 995, 300 ]
+          mode: outbound
+    exploit:
+      quality: 100
+      filters:
+        thumbnail:
+          size: [ 253, 142 ]
+          mode: outbound
+        watermark_image:
+          image: public/images/watermark.png
+          size: 0.3
+          position: bottomleft
+    exploit_large:
+      quality: 100
+      filters:
+        relative_resize:
+          widen: 1920
+        watermark_image:
+          image: public/images/watermark.png
+          size: 0.2
+          position: bottomleft
+    exploit_small:
+      quality: 50
+      filters:
+        thumbnail:
+          size: [ 20, 10 ]
+          mode: outbound
+    page_exploit:
+      quality: 75
+      filters:
+        relative_resize:
+          widen: 350
+    seo_og:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 1232, 641 ]
+          mode: outbound
+    seo_twitter_card:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 120, 120 ]
+          mode: outbound
+    homepage_event_card:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 300, 60 ]
+          mode: outbound
+    role_small:
+      quality: 50
+      filters:
+        thumbnail:
+          size: [ 410, 300 ]
+          mode: outbound
+    role:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 750, 400 ]
+          mode: outbound
+    event_show:
+      quality: 75
+      filters:
+        thumbnail:
+          size: [ 932, 400 ]
+          mode: outbound
+    event_show_low:
+      quality: 30
+      filters:
+        thumbnail:
+          size: [ 450, 200 ]
+          mode: outbound

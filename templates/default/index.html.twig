@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('homepage') }}
+    {{ encore_entry_link_tags('homepage-computer', attributes={
+        media: 'screen and (min-width:768px)'
+    }) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('homepage') }}
+
+    {{ encore_entry_script_tags('homepage-computer', attributes={
+        media: 'screen and (min-width:768px)'
+    }) }}
+{% endblock %}
+
+{% macro interAngle(imageName,alt,classes) %}
+    {% if classes is not defined %}
+        {% set classes = [] %}
+    {% endif %}
+
+    {% set path = 'images/homepage/'~imageName~'.jpg' %}
+    {% set pathWebp = 'images/homepage/'~imageName~'.webp' %}
+
+{#    {% set sources = {#}
+{#        'image/webp':pathWebp,#}
+{#        'image/jpeg':path#}
+{#    } %}#}
+    {% set sources = {
+        'image/webp':pathWebp,
+    } %}
+
+    <div class="inter-angle paralax {{ classes|join(' ') }}" data-aos="fade-up">
+        <div class="overlay"></div>
+        <picture>
+            {% for type,source in sources %}
+                <source srcset="{{ source|imagine_filter('low_inter_angle') }}"
+{#                        srcset="{{ source|imagine_filter('low_inter_angle') }} 570w,#}
+{#                      {{ source|imagine_filter('low_inter_angle') }} 720w,#}
+{#                      {{ source|imagine_filter('low_inter_angle') }} 980w,#}
+{#                      {{ source|imagine_filter('low_inter_angle') }} 1200w,#}
+{#                      {{ source|imagine_filter('low_inter_angle') }} 1900w"#}
+                        sizes="
+              (max-width: 570px) 570px,
+              (max-width: 720px) 720px,
+              (max-width: 980px) 980px,
+              (max-width: 1200px) 1200px,
+              (max-width: 1900px) 1900px"
+                        {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                            srcset: {
+                                '570w': source|imagine_filter('inter_angle_xs'),
+                                '720w': source|imagine_filter('inter_angle_sm'),
+                                '980w': source|imagine_filter('inter_angle_md'),
+                                '1200w': source|imagine_filter('inter_angle_lg'),
+                                '1900w': source|imagine_filter('inter_angle'),
+                            }
+                        }) }}
+                        type="{{ type }}">
+            {% endfor %}
+            <img src="{{ pathWebp|imagine_filter('low_inter_angle') }}" alt="{{ alt }}">
+{#            <img alt="{{ alt }}"#}
+{#                    {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {#}
+{#                        srcset: {#}
+{#                            '570w': pathWebp|imagine_filter('inter_angle_xs'),#}
+{#                            '720w': pathWebp|imagine_filter('inter_angle_sm'),#}
+{#                            '980w': pathWebp|imagine_filter('inter_angle_md'),#}
+{#                            '1200w': pathWebp|imagine_filter('inter_angle_lg'),#}
+{#                            '1900w': pathWebp|imagine_filter('inter_angle_xl'),#}
+{#                            '1900w': pathWebp|imagine_filter('inter_angle'),#}
+{#                        }#}
+{#                    }) }}>#}
+        </picture>
+    </div>
+{% endmacro %}
+
+{% block body %}
+    {% include 'include/homepage/_top-banner.html.twig' %}
+
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                {#                {% include 'include/homepage/_presentation.htm.twig' %} #}
+                {% include 'include/homepage/_histoire.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+    {{ _self.interAngle('SC_01_Wallpaper_3840x2160','Vaisseaux Star citizen') }}
+
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                {% include 'include/homepage/_activite.html.twig' %}
+                {% include 'include/homepage/_join-us.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+    {{ _self.interAngle('SC_03_Wallpaper_3840x2160','Attaque Star citizen planete') }}
+
+
+    <!--
+        <a href="<?= echo('foo/bar/baz')?>" class="a468783877">
+             6331f1c78e4f54
+        </a>
+    -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                {% include 'include/homepage/_exploits.html.twig' %}
+                {% include 'include/homepage/_events.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+    {{ _self.interAngle('SC_06_Wallpaper_3840x2160','Moteur nucléaire Star citizen') }}
+
+    <div class="container-fluid">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                <div class="container">
+                    <section id="chart-contact">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-8">
+                                {% include 'include/homepage/_charte.html.twig' %}
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                {% include 'include/homepage/_contact.html.twig' %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ _self.interAngle('SC_08_Wallpaper_3840x2160','Vaisseau Star citizen soleil couchant',['last-inter-angle']) }}
+
+
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+         version="1.1">
+        <defs>
+            <filter id="round">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+                <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"/>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+{% endblock %}

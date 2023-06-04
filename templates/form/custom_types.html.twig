@@ -1,0 +1,48 @@
+{% block r_rule_row %}
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_row(form.FREQUENCY) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.DTSTART) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.FREQUENCY_INTERVAL) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.COUNT) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_row(form.WKST) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_row(form.UNTIL) }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            {{ form_row(form.BYDAY) }}
+        </div>
+        <div class="col-md-4">
+            {{ form_row(form.BYYEARDAY) }}
+        </div>
+        <div class="col-md-4">
+            {{ form_row(form.BYMONTHDAY) }}
+        </div>
+        <div class="col-md-4">
+            {{ form_row(form.BYWEEKNO) }}
+        </div>
+        <div class="col-md-4">
+            {{ form_row(form.BYMONTH) }}
+        </div>
+    </div>
+    {{ form_errors(form) }}
+{#    {% for child in form.children|filter(child => not child.rendered) %}#}
+{#        <div class="form-group">#}
+{#            {{ form_row(child) }}#}
+{#        </div>#}
+{#    {% endfor %}#}
+{% endblock %}

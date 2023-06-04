@@ -1,0 +1,151 @@
+//@keyframes breath {
+//  0% {
+//    //filter: drop-shadow(0px 0px 3px rgba(darken($primary, 10), 0.2));
+//    filter: drop-shadow(0px 0px 3px rgba(darken(white, 10), 0.4));
+//  }
+//  50% {
+//    //filter: drop-shadow(0px 5px 10px rgba(darken($primary, 10), 0.6));
+//    filter: drop-shadow(0px 2px 10px rgba(darken(white, 10), 0.8));
+//  }
+//  100% {
+//    //filter: drop-shadow(0px 0px 3px rgba(darken($primary, 10), 0.2));
+//    filter: drop-shadow(0px 0px 3px rgba(darken(white, 10), 0.4));
+//
+//  }
+//}
+
+.custom-navbar-container {
+  position: fixed;
+  top:      0;
+  @include make-col(2);
+  height:   100vh;
+  z-index:  500;
+  padding:  10px;
+
+  @include media-breakpoint-down(lg) {
+    padding: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    width:          100%;
+    height:         auto;
+    flex-direction: row;
+    //position:       sticky;
+  }
+
+  .custom-navbar {
+    height:           100%;
+    overflow:         auto;
+    @if $enable-rounded {
+      border-radius: $border-radius;
+    }
+    align-items:      flex-start;
+    padding:          50px 0 10px 0;
+    background-color: rgba(lighten($custom-dark, 10), .7);
+    backdrop-filter:  blur(10px);
+    display:          flex;
+    flex-direction:   column;
+
+    @include customScrollBar;
+
+    @include media-breakpoint-down(md) {
+      padding:        5px;
+      width:          100%;
+      height:         auto;
+      flex-direction: row;
+      position:       sticky;
+    }
+
+    .logo {
+      width: 100%;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      .navbar-brand {
+        margin-bottom: 20px;
+        text-align:    center;
+
+        img {
+          width:     50%;
+          max-width: 200px;
+          @include media-breakpoint-only(sm) {
+            max-width: 100px;
+          }
+        }
+      }
+    }
+
+    .main-navbar {
+      width: 100%;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+
+    .secondary-navbar {
+      width: 100%;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      ul {
+        flex-direction: row;
+      }
+    }
+
+    .main-navbar, .secondary-navbar {
+      ul {
+        li {
+          text-align:    center;
+          flex-grow:     1;
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            &.nav-link {
+              color:      white;
+              transition: .2s all ease-in-out;
+              @if $enable-rounded {
+                border-radius: $border-radius;
+              }
+              border:     1px solid rgba($custom-dark, .6);
+
+              &.active, &:hover, &:focus {
+                color:            white;
+                background-color: rgba($primary, .5);
+                background-image: linear-gradient(to bottom right, rgba($primary, .5), rgba($primary, .1));
+                border-color:     rgba($primary, .8);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      .logo-sc {
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+
+        img {
+          width: 20%;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+        {% for fleet in entity.instance.fleets %}
+                <div class="row">
+                        <div class="col">{{ fleet.ship.name }}</div>
+                        <div class="col">{{ fleet.numberShips }}</div>
+                        <div class="col"><span class="badge badge-info">{{ fleet.isIsBuyInGame ? 'Achat in Game' : 'Achat IRL' }}</span></div>
+                </div>
+        {% endfor %}
+</div>
+
+{#<table class="table table-sm">#}
+{#    <thead>#}
+{#    <tr>#}
+{#        <th>Nom du vaisseau</th>#}
+{#        <th>Nombre de vaisseau</th>#}
+{#        <th>Achat in game</th>#}
+{#    </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#    {% for fleet in entity.instance.fleets %}#}
+{#        <tr>#}
+{#            <td>{{ fleet.ship.name }}</td>#}
+{#            <td>{{ fleet.numberShips }}</td>#}
+{#            <td><span class="badge badge-info">{{ fleet.isIsBuyInGame ? 'Achat in Game' : 'Achat IRL' }}</span></td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#    </tbody>#}
+{#</table>#}

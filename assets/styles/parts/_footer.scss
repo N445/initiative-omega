@@ -1,0 +1,57 @@
+
+footer {
+  background-color: $custom-dark;
+  color:            $text-color;
+
+  .rgpd-links, .social-links {
+    display: inline-flex;
+    //margin-left: auto;
+
+
+    li {
+      line-height: 20px;
+
+      a {
+        font-size:       20px;
+        line-height:     20px;
+        text-decoration: none;
+        @include media-breakpoint-down(md) {
+          font-size: 13px;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .rgpd-links {
+    li {
+      a {
+        transition: .2s ease-in-out all;
+        font-size:  16px;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    li {
+      a {
+        i {
+          transition: .2s ease-in-out all;
+        }
+
+        &:hover {
+          i {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}

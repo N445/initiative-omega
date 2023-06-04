@@ -1,0 +1,77 @@
+{% macro printFleetRow(fleetForm) %}
+    <div class="fleet">
+        {{ form_errors(fleetForm) }}
+        <div class="d-flex">
+            <div class="left w-100">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(fleetForm.ship) }}
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-end">
+                            {{ form_row(fleetForm.numberShips) }}
+                            <div class="ms-1">
+                                {{ form_row(fleetForm.isBuyInGame) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right ms-3">
+                <div class="d-flex h-100 align-items-end">
+                    <button class="btn btn-danger btn-remove-fleet pull-right mb-3">
+                        <i class="fa-solid fa-plus fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro printFleetCard(fleetForm) %}
+    <div class="col fleet form">
+        <div class="card text-bg-custom-dark-light">
+            <div class="top-image">
+                <img src="{{ fleetForm.vars.data.ship.bannerImage|default(fleetForm.ship.vars.choices|first.data.bannerImage) }}" class="card-img-top"
+                     alt="En attente de séléction" height="100">
+            </div>
+            <div class="card-body">
+                {{ form_row(fleetForm.ship) }}
+                {{ form_label(fleetForm.numberShips) }}
+                <div class="input-group mb-3 number-ships">
+                    <button class="btn btn-outline-primary remove-quantity" type="button">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                    {{ form_widget(fleetForm.numberShips) }}
+                    <button class="btn btn-outline-primary add-quantity" type="button">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                {{ form_errors(fleetForm.numberShips) }}
+                {{ form_row(fleetForm.isBuyInGame) }}
+                {{ form_errors(fleetForm) }}
+                <button class="btn-remove-fleet">
+                    <i class="fa-solid fa-plus fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+<div class="container-fluid">
+    {{ form_start(formEditFleets) }}
+    <div class="fleets-form row row-cols-3 g-2"
+         data-index="{{ formEditFleets.fleets|length }}"
+         data-prototype="{{ _self.printFleetCard(formEditFleets.fleets.vars.prototype)|e('html_attr') }}">
+        {% for fleet in formEditFleets.fleets %}
+            {{ _self.printFleetCard(fleet) }}
+        {% endfor %}
+    </div>
+    <button type="button" class="btn btn-custom-secondary add_item_link mb-3 ms-auto d-block text-white"
+            data-collection-holder-class="fleets-form">
+        <i class="fa-solid fa-plus"></i> Ajouter un ship
+    </button>
+    <br>
+    <button type="submit" class="btn btn-primary">
+        Modifier
+    </button>
+</div>
+{{ form_end(formEditFleets) }}

@@ -1,0 +1,5 @@
+{% if entity.instance.hasRrule %}
+    {{ field.value }}
+{% else %}
+    <span class="badge badge-danger">Non</span>
+{% endif %}

@@ -1,0 +1,16 @@
+@import "foundation-email";
+@import "./../variables";
+
+
+.body-border {
+  border-top: 8px solid $primary;
+}
+
+.main-logo {
+  width:  150px;
+  height: auto;
+}
+
+.main-btn {
+  background: $primary;
+}

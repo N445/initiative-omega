@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace membre{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('profile') }}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('profile') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-end">
+            <div class="col-md-10">
+                <div class="container my-5">
+                    <h1 class="main-font mb-4">Espace membre</h1>
+                    {% set tabDefault = true %}
+                    {% set tabEditInfo = false %}
+                    {% set tabEditPassword = false %}
+                    {% set tabEditFleets = false %}
+                    {% if not formEditInformation.vars.valid %}
+                        {% set tabDefault = false %}
+                        {% set tabEditInfo = true %}
+                    {% endif %}
+                    {% if not formEditPassword.vars.valid %}
+                        {% set tabDefault = false %}
+                        {% set tabEditPassword = true %}
+                    {% endif %}
+                    {% if not formEditFleets.vars.valid %}
+                        {% set tabDefault = false %}
+                        {% set tabEditFleets = true %}
+                    {% endif %}
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="angle-top-left card text-bg-custom-dark-light">
+                                <div class="card-body">
+                                    <div class="nav flex-column nav-pills text-center" id="v-pills-tab" role="tablist"
+                                         aria-orientation="vertical">
+                                        <button class="btn btn-outline-primary-rgba mb-3{{ tabDefault?' active':'' }}"
+                                                id="v-pills-information-tab"
+                                                data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-information" type="button" role="tab"
+                                                aria-controls="v-pills-information"
+                                                aria-selected="true">
+                                            T'es informations
+                                        </button>
+                                        <button class="btn btn-outline-primary-rgba mb-3{{ tabEditInfo?' active':'' }}"
+                                                id="v-pills-edit-information-tab"
+                                                data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-edit-information" type="button" role="tab"
+                                                aria-controls="v-pills-edit-information" aria-selected="false">
+                                            Modifie t'es informations
+                                        </button>
+                                        <button class="btn btn-outline-primary-rgba mb-3{{ tabEditPassword?' active':'' }}"
+                                                id="v-pills-edit-password-tab"
+                                                data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-edit-password" type="button" role="tab"
+                                                aria-controls="v-pills-edit-password" aria-selected="false">
+                                            Modifie ton mot de passe
+                                        </button>
+                                        <button class="btn btn-outline-primary-rgba{{ tabEditFleets?' active':'' }}"
+                                                id="v-pills-edit-fleets-tab"
+                                                data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-edit-fleets" type="button" role="tab"
+                                                aria-controls="v-pills-edit-fleets" aria-selected="false">
+                                            Modifie ta flotte
+                                        </button>
+                                        <hr>
+                                        <a href="{{ path('app_logout') }}" class="nav-link">
+                                            Déconnexion
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="angle-top-left card text-bg-custom-dark-light">
+                                <div class="card-body">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade{{ tabDefault?' show active':'' }}" id="v-pills-information"
+                                             role="tabpanel"
+                                             aria-labelledby="v-pills-information-tab" tabindex="0">
+                                            {% include 'include/profile/_informations.html.twig' %}
+                                        </div>
+                                        <div class="tab-pane fade{{ tabEditInfo?' show active':'' }}"
+                                             id="v-pills-edit-information" role="tabpanel"
+                                             aria-labelledby="v-pills-edit-information-tab" tabindex="0">
+                                            {% include 'include/profile/_edit-informations.html.twig' %}
+                                        </div>
+                                        <div class="tab-pane fade{{ tabEditPassword?' show active':'' }}"
+                                             id="v-pills-edit-password" role="tabpanel"
+                                             aria-labelledby="v-pills-edit-password-tab" tabindex="0">
+                                            {% include 'include/profile/_edit-password.html.twig' %}
+                                        </div>
+                                        <div class="tab-pane fade{{ tabEditFleets?' show active':'' }}"
+                                             id="v-pills-edit-fleets" role="tabpanel"
+                                             aria-labelledby="v-pills-edit-fleets-tab" tabindex="0">
+                                            {% include 'include/profile/_edit-fleets.html.twig' %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

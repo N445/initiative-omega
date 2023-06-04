@@ -1,0 +1,5 @@
+
+
+<Directory public/uploads/images/exploit/>
+Deny from All
+</Directory>

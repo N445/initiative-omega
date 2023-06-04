@@ -1,0 +1,20 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes: ['bootstrap_5_layout.html.twig']
+    paths:
+        '%kernel.project_dir%/assets/styles': styles
+        '%kernel.project_dir%/public/images': images
+    globals:
+        discord_url: https://discord.gg/8edBkwS9BJ
+        guilded_url: https://www.guilded.gg/i/m24dzjW2
+        rsi_url: https://robertsspaceindustries.com/orgs/SOFC
+        twitter_url: https://twitter.com/ShadowofCaliban
+        twitch_url: https://www.twitch.tv/shadowofcaliban
+        youtube_url: https://www.youtube.com/channel/UCxSZvGo8gL41CDOH0o-pVgA
+        instagram_url: https://www.instagram.com/shadow_of_caliban/
+        facebook_url: https://www.facebook.com/ShadowOfCaliban
+        recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_KEY)%'
+
+when@test:
+    twig:
+        strict_variables: true

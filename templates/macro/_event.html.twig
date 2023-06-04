@@ -1,0 +1,86 @@
+{% macro eventCard(event,type,currentEventDate) %}
+
+    {% if not event.hasRrule %}
+        {% set linkPath = path('EVENT',{'id':event.id}) %}
+    {% else %}
+        {% set linkPath = path('EVENT',{'id':event.id,'date':event.startedAt|date('Y-m-d H:i:s')}) %}
+    {% endif %}
+
+
+    {% if type != 'past' %}
+        <a href="{{ linkPath }}" class="event event-{{ type }}{{ event.startedAt == currentEventDate?' event-displayed':'' }}">
+    {% else %}
+        <div class="event event-{{ type }}{{ event.startedAt == currentEventDate?' event-displayed':'' }}">
+    {% endif %}
+    <div class="event-content">
+        <img src="{{ event.imagePath|imagine_filter('homepage_event_card') }}" alt="" class="bg-image">
+        <span class="join-us">
+Voir le détail
+                            </span>
+        <div class="content">
+            {% if type != 'past' %}
+                <div class="date">
+                    <div class="day">
+                        {{ event.startedAt|date('d') }}
+                        <br>
+                        {{ event.startedAt|format_datetime(pattern="MMM", locale='fr') }}
+                    </div>
+                    <div class="time">{{ event.startedAt|date('H\\hi') }}</div>
+                </div>
+            {% endif %}
+            <div class="title">
+                <h4>{{ event.title|u.truncate(80,'...') }}</h4>
+                {% if event.isNow %}
+                    <small class="text-muted from-now">
+                        En cours
+                    </small>
+                {% else %}
+                    <small class="text-muted from-now" data-moment-js="{{ event.startedAt|date('Y-m-d H:i:s') }}">
+                        {{ event.startedAt|date('d/m/Y H:i') }}
+                    </small>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% if type != 'past' %}
+        </a>
+    {% else %}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro eventCardAlternative(event,currentEventDate) %}
+
+    {% if event|isNow %}
+        {% set class = 'event-current' %}
+    {% elseif event|isPast %}
+        {% set class = 'event-past' %}
+    {% else %}
+        {% set class = 'event-futur' %}
+    {% endif %}
+
+    {% if not event.hasRrule %}
+        {% set linkPath = path('EVENT',{'id':event.id}) %}
+    {% else %}
+        {% set linkPath = path('EVENT',{'id':event.id,'date':event.startedAt|date('Y-m-d H:i:s')}) %}
+    {% endif %}
+
+
+    <a href="{{ linkPath }}"
+       class="event-alternative {{ class }}{{ event.startedAt == currentEventDate?' event-displayed':'' }}">
+        <div class="bg-image">
+            <img src="{{ event.imagePath }}" alt="" class="img-fluid">
+        </div>
+        <div class="content">
+            <h4 class="title">{{ event.title }}</h4>
+            <div class="date">
+                <i class="fa-solid fa-calendar-days"></i>
+                {% if event.isNow %}
+                    En cours
+                {% else %}
+                    {{ event.startedAt|format_datetime(pattern="d MMM HH'h'mm", locale='fr') }}
+                {% endif %}
+            </div>
+        </div>
+    </a>
+{% endmacro %}

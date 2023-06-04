@@ -1,0 +1,53 @@
+<table class="table table-sm">
+    <tbody>
+    <tr>
+        <th>Email</th>
+        <td>{{ app.user.email }}</td>
+    </tr>
+    {#                                        <tr> #}
+    {#                                            <th>Inscrit le</th> #}
+    {#                                            <td>{{ app.user.registeredAt|date('d/m/Y H:i') }}</td> #}
+    {#                                        </tr> #}
+    <tr>
+        <th>Pseudo RSI</th>
+        <td>{{ app.user.info.rsiName }}</td>
+    </tr>
+    <tr>
+        <th>Pseudo Guilded</th>
+        <td>{{ app.user.info.guildedName }}</td>
+    </tr>
+    <tr>
+        <th>Pseudo Discord</th>
+        <td>{{ app.user.info.discordName }}</td>
+    </tr>
+    </tbody>
+</table>
+<h2>Ta flotte</h2>
+{% if fleets|length %}
+    <div class="fleets row row-cols-3 g-2">
+        {% for fleet in fleets %}
+            <div class="col">
+                <div class="fleet">
+                    <div class="card text-bg-custom-dark-light">
+                        <div class="top-image">
+                            <img src="{{ fleet.ship.bannerImage|default }}" class="card-img-top"
+                                 alt="En attente de séléction" height="100">
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5 class="mb-0">{{ fleet.ship.name }}</h5>
+                                <span class="badge rounded-pill bg-primary ms-3">{{ fleet.numberShips }}</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">{{ fleet.isBuyInGame?'Achat in game':'Achat IRL' }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Aucun ship pour le moment, tu peux en ajouter en cliquant sur "Modifie ta flotte"</p>
+{% endif %}
+

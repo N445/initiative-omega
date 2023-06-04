@@ -1,0 +1,20 @@
+{% import 'macro/_event.html.twig' as eventMacro %}
+
+<section id="events">
+    <div class="container">
+        {% if events.current|length or events.futur|length or events.past|length  %}
+            <div class="decorated-title">
+                <h4 class="main-font">NOS EVENTS</h4>
+                <span class="trait"></span>
+            </div>
+
+            <div class="events-alternative row justify-content-center g-4 mb-5">
+                {% for event in events_alternative %}
+                    <div class="col-md-4">
+                        {{ eventMacro.eventCardAlternative(event) }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

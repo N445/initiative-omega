@@ -1,0 +1,62 @@
+{% if activites|length %}
+    <section id="activites">
+        <div class="container">
+            <div class="decorated-title">
+                <h4 class="main-font">NOS ACTIVITES</h4>
+                <span class="trait"></span>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="activites-navigation" id="activites-navigation-pills-tab" role="tablist">
+                        {% for activite in activites %}
+                            {% set tabId = 'activites-navigation-pills-' ~ activite.slug %}
+                            <div class="activite {{ loop.first ? ' active':'' }}" id="{{ tabId }}-tab"
+                                 data-bs-toggle="pill"
+                                 data-bs-target="#{{ tabId }}" role="tab" aria-controls="{{ tabId }}"
+                                 aria-selected="true"
+                                 data-aos="fade-up" data-aos-delay="{{ loop.index0 * 200 }}"
+                            >
+                                <span class="activite-border activite-border-top"></span>
+                                <span class="activite-border activite-border-bottom"></span>
+                                <img src="{{ vich_uploader_asset(activite,'imageFile')|imagine_filter('activite') }}"
+                                     loading="lazy"
+                                     alt="{{ activite.title }}"
+                                     class="img-fluid">
+                                <p class="h5 content">{{ activite.title }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="activites-content tab-content">
+                        {% for activite in activites %}
+                            {% set tabId = 'activites-navigation-pills-' ~ activite.slug %}
+                            <div class="activite{{ loop.first ? ' show active':'' }} tab-pane fade" id="{{ tabId }}"
+                                 role="tabpanel"
+                                 aria-labelledby="{{ tabId }}-tab" tabindex="0"
+                                 {% if  loop.first %}data-aos="fade-up"{% endif %}
+                            >
+                                <div class="banner">
+                                    <div class="content">
+                                        <img src="{{ vich_uploader_asset(activite)|imagine_filter('activite_banner') }}"
+                                             alt="{{ activite.title }}" class="img-fluid" loading="lazy">
+                                        <h4 class="title">{{ activite.title }}</h4>
+                                        {% if loop.first %}
+                                            <div id="activite-particle" class="activite-particle"></div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="content mt-4">
+                                    {{ activite.content|raw }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+
+{#<div id="activites-particle-js" style="height: 300px;width: 300px;background-color: red;"></div>#}

@@ -1,0 +1,6 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title 'Graph des points d\'xp de ' ~ member.name %}
+{% block page_content %}
+    {{ render_chart(chart) }}
+{% endblock %}

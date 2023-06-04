@@ -1,0 +1,50 @@
+{{ form_start(formEditInformation) }}
+<table class="table table-dark table-sm">
+    <tbody>
+    <tr>
+        <th>{{ form_label(formEditInformation.email) }}</th>
+        <td>
+            {{ form_widget(formEditInformation.email) }}
+            {{ form_errors(formEditInformation.email) }}
+        </td>
+    </tr>
+    <tr>
+        <th>{{ form_label(formEditInformation.info.rsiName) }}</th>
+        <td>
+            {{ form_widget(formEditInformation.info.rsiName) }}
+            {{ form_errors(formEditInformation.info.rsiName) }}
+        </td>
+    </tr>
+    <tr>
+        <th>{{ form_label(formEditInformation.info.guildedName) }}</th>
+        <td>
+            {{ form_widget(formEditInformation.info.guildedName) }}
+            {{ form_errors(formEditInformation.info.guildedName) }}
+        </td>
+    </tr>
+    <tr>
+        <th>{{ form_label(formEditInformation.info.discordName) }}</th>
+        <td>
+            {{ form_widget(formEditInformation.info.discordName) }}
+            {{ form_errors(formEditInformation.info.discordName) }}
+        </td>
+    </tr>
+    <tr>
+        <th>{{ form_label(formEditInformation.referral) }}</th>
+        <td>
+            {{ form_widget(formEditInformation.referral) }}
+            {{ form_errors(formEditInformation.referral) }}
+        </td>
+    </tr>
+    </tbody>
+    <tfooter>
+        <tr>
+            <td colspan="100%">
+                <button type="submit" class="btn btn-sm btn-primary">
+                    Modifier
+                </button>
+            </td>
+        </tr>
+    </tfooter>
+</table>
+{{ form_end(formEditInformation) }}

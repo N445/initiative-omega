@@ -1,0 +1,173 @@
+{% import 'macro/_event.html.twig' as eventMacro %}
+
+{% extends 'base-inside-page.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Event {{ event.title }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('event') }}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('event') }}
+    <style>
+        .content img {
+            max-width: 100%;
+            height:    auto;
+        }
+    </style>
+{% endblock %}
+
+{% block body_content %}
+
+    {% if event.image %}
+        {% set eventImagePath = vich_uploader_asset(event) %}
+    {% elseif event.type and event.type.image %}
+        {% set eventImagePath = vich_uploader_asset(event.type) %}
+    {% else %}
+        {% set eventImagePath = asset('images/event/'~event.defaultImage) %}
+    {% endif %}
+
+
+    <section id="event" class="event-show">
+        <div class="{{ html_classes('row mb-5',{'justify-content-center': not futurEvents|length}) }}">
+            <div class="col-lg-9 mb-4">
+                <div class="card text-bg-dark shadow">
+                    <div class="background-image">
+                        <img src="{{ eventImagePath|imagine_filter('event_show_low') }}" alt="{{ event.title }}">
+                    </div>
+                    {% if event.hasRrule %}
+                        <button type="button" class="has-rrrule">
+                            <i class="fa-regular fa-calendar-days"></i>
+                        </button>
+                        <div class="rrule-content">
+                            <ul>
+                                {% for occurence in event.rrule.occurences %}
+                                    <li data-bs-toggle="tooltip" title="{{ occurence|date('d/m/Y H:i') }}">
+                                        {% set isPast = false %}
+                                        {% if occurence < date() %}
+                                            {% set isPast = true %}
+                                        {% endif %}
+                                        {% if isPast %}
+                                        <del>
+                                            {% endif %}
+                                            <span data-moment-js="{{ occurence|date('Y-m-d H:i') }}">{{ occurence|date('d/m/Y H:i') }}</span>
+                                            {% if isPast %}
+                                        </del>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <div class="card-header">
+                        <div class="events-plublished-at">
+                            {% if not event|isFinished %}
+                                {{ event|nextDateStart(reccurenceDate)|format_datetime(locale='fr',pattern="d MMMM yyyy H'h'mm") }}
+                                <i class="fa-solid fa-arrow-right"></i>
+                                {{ event|nextDateEnd(reccurenceDate)|format_datetime(locale='fr',pattern="d MMMM yyyy H'h'mm") }}
+                                |
+                                <i class="fa-regular fa-clock"></i>
+                                ({{ event.duration|getDurationFormat }})
+                            {% else %}
+                                Event terminé
+                            {% endif %}
+                        </div>
+                        <h2 class="event-title">{{ event.title }}</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="events-top">
+{#                            {% if event.type %}#}
+{#                                <div class="d-flex justify-content-center">#}
+{#                                    <div class="event-type">#}
+{#                                        {{ event.type.title }}#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            {% endif %}#}
+                            <div class="event-image">
+                                <img src="{{ eventImagePath|imagine_filter('event_show_low') }}"
+                                        {{ stimulus_controller('symfony/ux-lazy-image/lazy-image', {
+                                            src: eventImagePath|imagine_filter('event_show')
+                                        }) }}
+                                     alt="{{ event.title }}" class="img-fluid">
+                            </div>
+                            <div class="events-content">
+                                <div class="content">
+                                    {{ event.content|raw }}
+                                    <hr>
+                                    <h3>Organisation évènement :</h3>
+                                    <ul>
+                                        <li>Horaires :
+                                            {% if not event|isFinished %}
+                                                {{ event|nextDateStart(reccurenceDate)|format_datetime(locale='fr',pattern="d MMMM yyyy H'h'mm") }}
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                                {{ event|nextDateEnd(reccurenceDate)|format_datetime(locale='fr',pattern="d MMMM yyyy H'h'mm") }}
+                                                |
+                                                <i class="fa-regular fa-clock"></i>
+                                                ({{ event.duration|date('%hh%I') }})
+                                            {% else %}
+                                                Event terminé
+                                            {% endif %}
+                                        </li>
+                                        {% if event.availableForLabel %}
+                                            <li>
+                                                L'évent ouvert est ouvert à : {{ event.availableForLabel|join(', ') }}.
+                                            </li>
+                                        {% endif %}
+                                        {% if event.location %}
+                                            <li>Lieu de respawn et de départ : {{ event.location }}.</li>
+                                        {% endif %}
+                                        <li>Heure de rendez-vous : {{ event|nextDateRendezVous|date("H\\hi") }}</li>
+                                        <li>Lancement du serveur : {{ event|nextDateStart|date("H\\hi") }}</li>
+{#                                        <li>Fin de l'évent : {{ event|nextDateEnd|date("H\\hi") }}</li>#}
+                                        {% if event.theme %}
+                                            <li>Thème de la soirée : {{ event.theme }}.</li>{% endif %}
+                                        {% for extraInfoOrganisation in event.extraInfoOrganisation %}
+                                            <li>{{ extraInfoOrganisation }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <hr>
+                                    <p>
+                                        Merci, à tous de venir, un minimum préparé avant l'heure de départ pour
+                                        commencer la soirée le
+                                        plus tôt possible est dans les meilleures conditions.
+                                    </p>
+                                    <p>
+                                        Merci d'indiquer sur <a href="{{ discord_url }}" target="_blank">discord</a> si
+                                        vous souhaitez participer à la soirée.
+                                        Merci également de vous connecter sur #🔊 ┃ Intercom avant le début de la soirée
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="signature">
+                            {% if event.createdBy.signature %}
+                                {{ event.createdBy.signature|raw }}
+                            {% elseif event.createdBy.frontName %}
+                                Respectueusement {{ event.createdBy.frontName }}.
+                            {% else %}
+                                Respectueusement la Shadow of Caliban.
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if futurEvents|length %}
+                <div class="col-lg">
+                    <div class="events-alternative events-small side-events">
+                        {% for futurEvent in futurEvents %}
+                            <div class="mb-3">
+                                {{ eventMacro.eventCardAlternative(futurEvent,reccurenceDate) }}
+{#                                {{ eventMacro.eventCard(futurEvent,'futur',reccurenceDate) }}#}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+    </section>
+{% endblock %}
+

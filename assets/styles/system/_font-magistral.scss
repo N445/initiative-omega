@@ -1,0 +1,122 @@
+//@font-face {
+//    font-family: 'Magistral Extra';
+//    src: url('../../fonts/magistral/Magistral-ExtraBoldItalic.eot');
+//    src: local('Magistral Extra Bold Italic'), local('Magistral-ExtraBoldItalic'),
+//        url('../../fonts/magistral/Magistral-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-ExtraBoldItalic.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-ExtraBoldItalic.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-ExtraBoldItalic.ttf') format('truetype');
+//    font-weight: 800;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Magistral';
+//    src: url('../../fonts/magistral/Magistral-LightItalic.eot');
+//    src: local('Magistral Light Italic'), local('Magistral-LightItalic'),
+//        url('../../fonts/magistral/Magistral-LightItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-LightItalic.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-LightItalic.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-LightItalic.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Magistral Extra';
+//    src: url('../../fonts/magistral/Magistral-ExtraBold.eot');
+//    src: local('Magistral Extra Bold'), local('Magistral-ExtraBold'),
+//        url('../../fonts/magistral/Magistral-ExtraBold.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-ExtraBold.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-ExtraBold.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-ExtraBold.ttf') format('truetype');
+//    font-weight: 800;
+//    font-style: normal;
+//}
+
+//@font-face {
+//    font-family: 'Magistral';
+//    src: url('../../fonts/magistral/Magistral-Medium.eot');
+//    src: local('Magistral Medium'), local('Magistral-Medium'),
+//        url('../../fonts/magistral/Magistral-Medium.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-Medium.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-Medium.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-Medium.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: normal;
+//}
+
+//@font-face {
+//    font-family: 'Magistral Book';
+//    src: url('../../fonts/magistral/Magistral-BookItalic.eot');
+//    src: local('Magistral Book Italic'), local('Magistral-BookItalic'),
+//        url('../../fonts/magistral/Magistral-BookItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-BookItalic.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-BookItalic.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-BookItalic.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: italic;
+//}
+//
+@font-face {
+    font-family: 'Magistral Book';
+    src: url('../../fonts/magistral/Magistral-Book.eot');
+    src: local('Magistral Book'), local('Magistral-Book'),
+        url('../../fonts/magistral/Magistral-Book.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/magistral/Magistral-Book.woff2') format('woff2'),
+        url('../../fonts/magistral/Magistral-Book.woff') format('woff'),
+        url('../../fonts/magistral/Magistral-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Magistral';
+    src: url('../../fonts/magistral/Magistral-Bold.eot');
+    src: local('Magistral Bold'), local('Magistral-Bold'),
+        url('../../fonts/magistral/Magistral-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/magistral/Magistral-Bold.woff2') format('woff2'),
+        url('../../fonts/magistral/Magistral-Bold.woff') format('woff'),
+        url('../../fonts/magistral/Magistral-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+//@font-face {
+//    font-family: 'Magistral';
+//    src: url('../../fonts/magistral/Magistral-Light.eot');
+//    src: local('Magistral Light'), local('Magistral-Light'),
+//        url('../../fonts/magistral/Magistral-Light.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-Light.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-Light.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-Light.ttf') format('truetype');
+//    font-weight: 300;
+//    font-style: normal;
+//}
+//
+//@font-face {
+//    font-family: 'Magistral';
+//    src: url('../../fonts/magistral/Magistral-MediumItalic.eot');
+//    src: local('Magistral Medium Italic'), local('Magistral-MediumItalic'),
+//        url('../../fonts/magistral/Magistral-MediumItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-MediumItalic.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-MediumItalic.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-MediumItalic.ttf') format('truetype');
+//    font-weight: 500;
+//    font-style: italic;
+//}
+//
+//@font-face {
+//    font-family: 'Magistral';
+//    src: url('../../fonts/magistral/Magistral-BoldItalic.eot');
+//    src: local('Magistral Bold Italic'), local('Magistral-BoldItalic'),
+//        url('../../fonts/magistral/Magistral-BoldItalic.eot?#iefix') format('embedded-opentype'),
+//        url('../../fonts/magistral/Magistral-BoldItalic.woff2') format('woff2'),
+//        url('../../fonts/magistral/Magistral-BoldItalic.woff') format('woff'),
+//        url('../../fonts/magistral/Magistral-BoldItalic.ttf') format('truetype');
+//    font-weight: bold;
+//    font-style: italic;
+//}
+

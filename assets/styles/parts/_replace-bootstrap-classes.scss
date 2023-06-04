@@ -1,0 +1,55 @@
+.text-end {
+  text-align: right !important
+}
+
+.text-center {
+  text-align: center !important
+}
+
+.text-muted {
+  color: $dark;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.mx-2{
+  margin-left:  map-get($spacers, 2);
+  margin-right: map-get($spacers, 2);
+}
+
+.p-2 {
+  padding: map-get($spacers, 2);
+}
+
+.px-3 {
+  padding-left:  map-get($spacers, 3);
+  padding-right: map-get($spacers, 3);
+}
+
+.py-4 {
+  padding-bottom: map-get($spacers, 4);
+  padding-top:    map-get($spacers, 4);
+}
+
+.vr {
+  display: inline-block;
+  align-self: stretch;
+  width: 1px;
+  min-height: 1em;
+  background-color: currentcolor;
+  opacity: .25;
+}

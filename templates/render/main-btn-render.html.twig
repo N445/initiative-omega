@@ -1,0 +1,22 @@
+<div class="main-btn-container {{ classes }}">
+    <div class="main-btn-container-back"></div>
+    {% if isSubmit %}
+        <button type="submit" class="main-btn main-btn-{{ type }} {{ classes }}" {{ linkAttr }}>
+            <span class="gradiant"></span>
+            <span class="text">
+                {{ beforeHtml|raw }}
+                {{ text|raw }}
+                {{ afterHtml|raw }}
+            </span>
+        </button>
+    {% else %}
+        <a href="{{ link }}" class="main-btn main-btn-{{ type }}" {{ linkAttr }}>
+            <span class="gradiant"></span>
+            <span class="text">
+                {{ beforeHtml|raw }}
+                {{ text|raw }}
+                {{ afterHtml|raw }}
+            </span>
+        </a>
+    {% endif %}
+</div>

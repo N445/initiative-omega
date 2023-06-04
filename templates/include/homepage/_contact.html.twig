@@ -1,0 +1,14 @@
+<div data-aos="fade-up">
+    <div class="container">
+        <div class="decorated-title">
+            <h4 class="main-font">NOUS CONTACTER</h4>
+            <span class="trait"></span>
+        </div>
+        <div class="contact-form" data-recaptcha-site-key="{{ recaptcha_site_key }}">
+            {% include 'include/homepage/_contact_form.html.twig' %}
+            <div class="loader">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+            </div>
+        </div>
+    </div>
+</div>
